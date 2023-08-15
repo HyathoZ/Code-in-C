@@ -1,5 +1,7 @@
 #include <stdio.h>
+#include <time.h>
 #include <stdlib.h>
+
 void main();
 void option();
 void sum_operation();
@@ -13,27 +15,30 @@ void division_operation();
 
 void main(){
     
-    int option = 0;
+    char option = ' ';
     
     printf("\tDigite uma das opções abaixo:\n");
     printf("1-Soma\n2-Subtração\n3-Multiplicação\n4-Divisão\n\n");
-    scanf("%d", &option);
+    scanf("%c", &option);
+    system("clear"); //in windows instead of 'clear' is 'cls'
 
     switch(option){
-        case 1:
+        case '1':
         sum_operation();
         break;
-        case 2:
+        case '2':
         subtract_operation();
         break;
-        case 3:
+        case '3':
         multiple_operation();
         break;
-        case 4:
+        case '4':
         division_operation();
         break;
         default:
         printf("Opção invalida!\n");
+        system("sleep 1");
+        system("clear"); //in windows instead of 'clear' is 'cls'
         main();
         break;
     }
